@@ -55,11 +55,11 @@ const Jobs = () => {
   return (
     <div className="relative w-full pt-12 bg-gradient-to-b from-black/90 to-transparent rotate-x-1 h-fit">
       <div className="container px-3 flex flex-col gap-12 pt-12 mx-auto mb-12 transition-all duration-500 select-none">
-        <h1 className="flex flex-col self-center justify-start w-full font-bold drop-shadow-xl text-8xl">
-          <span className="flex text-white">
+        <h1 className="flex flex-col self-center justify-start w-full font-bold drop-shadow-xl">
+          <span className="flex text-white text-4xl sm:text-6xl font-bold md:text-4xl lg:text-6xl whitespace-nowrap">
             Jobs<p className="text-zinc-600">.</p>
           </span>
-          <span className="text-2xl font-normal text-zinc-400">
+          <span className=" text-2xl font-light md:text-2xl lg:text-3xl text-zinc-400">
             Check out some of my featured works
           </span>
         </h1>
@@ -75,10 +75,10 @@ const Jobs = () => {
                     <span className="flex flex-col items-start justify-between flex-shrink gap-2 p-2 text-center text-white transition-all duration-300 md:w-1/2">
                       <span className="flex flex-col items-start self-start w-full gap-1">
                         <span className="flex items-center justify-between w-full gap-1">
-                          <h3 className="w-full text-3xl font-bold text-start">
+                          <h3 className="w-full text-2xl sm:text-3xl font-bold text-start">
                             {title}
                           </h3>
-                          <h4 className="text-sm font-bold whitespace-nowrap">
+                          <h4 className="text-xs sm:text-sm font-bold whitespace-nowrap">
                             {date}
                           </h4>
                         </span>
