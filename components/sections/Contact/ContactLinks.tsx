@@ -26,7 +26,7 @@ const socials = [
 
 export default function ContactLinks() {
   return (
-    <div className="flex flex-col items-end justify-end w-full gap-6 px-4 mx-auto md:w-1/2 lg:w-1/3">
+    <div className="flex flex-col items-end justify-end w-full pt-6 border-t md:border-t-0 gap-6 mx-auto md:w-1/2 lg:w-1/3">
       {socials.map((s) => (
         <Card key={`socials-${s.label}`}>
           <Link

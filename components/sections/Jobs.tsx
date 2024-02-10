@@ -86,11 +86,11 @@ const Jobs = () => {
                           &quot;{info}&quot;
                         </p>
                       </span>
-                      <span className="flex gap-2 font-sans font-light text-md text-start whitespace-nowrap">
+                      <span className="flex gap-2 font-sans font-light text-md mt-auto text-start whitespace-nowrap">
                         {stack.map((name) => (
                           <IconDisplay
                             key={`icon-${name}`}
-                            size={width > 1024 ? 30 : 40}
+                            size={width > 1024 ? 30 : width < 450 ? 30 : 40}
                             name={name}
                           />
                         ))}
@@ -99,7 +99,7 @@ const Jobs = () => {
                         {href != "/" ? (
                           <Link href={href} className="mt-3 btn-primary">
                             <LinkIcon />
-                            Visit Page
+                            Visit
                           </Link>
                         ) : (
                           <button disabled className="mt-3 btn-primary">
@@ -111,7 +111,7 @@ const Jobs = () => {
                         {git != "/" && (
                           <Link href={git} className="mt-3 btn-primary">
                             <Github />
-                            Visit Page
+                            Visit
                           </Link>
                         )}
                       </span>

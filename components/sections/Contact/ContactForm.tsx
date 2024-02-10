@@ -68,10 +68,10 @@ const ContactForm = () => {
       className="select-none flex justify-between h-full flex-col transition-all duration-500 w-full md:w-1/2  lg:w-2/3 data-[loading=false]:h-fit gap-12"
     >
       <span>
-        <h1 className="flex text-6xl font-bold md:text-4xl lg:text-6xl whitespace-nowrap">
+        <h1 className="flex text-4xl sm:text-6xl font-bold md:text-4xl lg:text-6xl whitespace-nowrap">
           Get in touch<p className="text-zinc-600">.</p>
         </h1>
-        <h2 className="flex text-3xl font-light md:text-2xl lg:text-3xl">
+        <h2 className="flex text-2xl font-light md:text-2xl lg:text-3xl">
           Let&apos;s work together<p className="font-medium text-zinc-600">?</p>
         </h2>
       </span>
