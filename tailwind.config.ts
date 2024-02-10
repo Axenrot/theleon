@@ -29,6 +29,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        calsans: ["CalSans", ...defaultTheme.fontFamily.sans],
         "absolut-pro": ["AbsolutPro", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {

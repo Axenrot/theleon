@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "/fonts/AbsolutPro/absolut-pro.css";
+@import "/fonts/CalSans.css";
 
 @layer base {
   .text-edge-outline {

@@ -54,7 +54,7 @@ const Jobs = () => {
 
   return (
     <div className="relative w-full pt-12 bg-gradient-to-b from-black/90 to-transparent rotate-x-1 h-fit">
-      <div className="container flex flex-col gap-12 pt-12 mx-auto mb-12 transition-all duration-500 select-none">
+      <div className="container px-3 flex flex-col gap-12 pt-12 mx-auto mb-12 transition-all duration-500 select-none">
         <h1 className="flex flex-col self-center justify-start w-full font-bold drop-shadow-xl text-8xl">
           <span className="flex text-white">
             Jobs<p className="text-zinc-600">.</p>
