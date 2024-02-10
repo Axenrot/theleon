@@ -16,7 +16,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-full min-h-screen overflow-hidden border border-red-500 screen-container">
+    <div className="flex flex-col items-center justify-center h-full min-h-screen overflow-hidden screen-container">
       <span className="fixed top-0 left-0 w-full h-full -z-40 bg-gradient-to-tl from-white via-white/10 to-white" />
       <Particles
         className="fixed inset-0 -z-50 animate-fade-in "
