@@ -1,0 +1,4 @@
+@font-face {
+  font-family: "Shump";
+  src: url("./Shump.woff") format("woff"), url("./Shump.ttf") format("truetype");
+}

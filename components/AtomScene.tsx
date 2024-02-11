@@ -30,7 +30,6 @@ const AtomScene = () => {
         width: "50vh",
         height: "50vh",
         ease: "linear",
-        scrub: 3,
       },
       "1%"
     );
@@ -42,12 +41,9 @@ const AtomScene = () => {
         left: "0%",
         translateX: "-30%",
         top: "10%",
-
-        // translateY: "0%",
         width: "80vh",
         height: "80vh",
         ease: "linear",
-        scrub: 3,
       },
       "50%"
     );
