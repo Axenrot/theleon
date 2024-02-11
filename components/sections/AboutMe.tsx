@@ -39,12 +39,19 @@ const AboutMe = () => {
         <h1 className="text-3xl font-bold md:text-4xl lg:text-6xl">
           WEB ARTIST SINCE 2020
         </h1>
-        <p className="text-xl font-light md:text-2xl text-zinc-400 lg:text-3xl">
-          Expertise with frameworks and page design • Clean and responsive,
-          user-focused interfaces • High standards of secure coding • Pro in
-          learning new technologies and concepts • Extrovert and communicative
-        </p>
-        <div className="border-2 flex px-3 mt-6 text-2xl text-zinc-200 overflow-hidden p-2 rounded-full w-full h-14">
+        <span className="flex flex-col gap-3 text-2xl font-light italic font-absolut-pro md:text-3xl text-zinc-400 lg:text-4xl">
+          <p>
+            Web Developer passionate about creating user friendly and visually
+            appealing interfaces.
+          </p>
+          <p>
+            Seeking for my first international career opportunity. I come with
+            experience in the role, Scrum management, effective problem-solving,
+            strong English proficiency, and the capability to handle anything
+            involving JavaScript
+          </p>
+        </span>
+        <div className="border-2 flex px-3 mt-6 text-lg md:text-xl xl:text-2xl text-zinc-200 overflow-hidden p-2 rounded-full w-full h-14">
           <div className="boxes items-center self-center flex gap-3 flex-nowrap whitespace-nowrap">
             {perks.map((perk, index) => {
               return (
