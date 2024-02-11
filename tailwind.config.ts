@@ -29,7 +29,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-        calsans: ["CalSans", ...defaultTheme.fontFamily.sans],
+        shump: ["Shump", ...defaultTheme.fontFamily.sans],
         "absolut-pro": ["AbsolutPro", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
@@ -38,6 +38,7 @@ const config: Config = {
       },
       animation: {
         title: "title 3s ease-out forwards",
+        rotate: "rotate 10s linear infinite",
         "fade-in": "fade-in 3s ease-in-out forwards",
         "fade-in-delayed": "fadeIn 3s ease-in-out forwards",
         "fade-left": "fade-left 3s ease-in-out forwards",
