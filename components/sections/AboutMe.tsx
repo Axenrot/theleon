@@ -30,11 +30,11 @@ const AboutMe = () => {
   }, [preventEffect]);
 
   return (
-    <div className="relative flex flex-col w-full px-3 animate-fade-in-up bg-gradient-to-b to-black/90 from-black sm:px-6 md:px-12 lg:px-24 p-24">
+    <div className="relative flex flex-col w-full animate-fade-in-up bg-gradient-to-b to-black/90 from-black py-24">
       <Buildings className="left-0 h-24" />
       <span
         // style={{ backgroundSize: "0% 100%" }}
-        className="container mx-auto px-3 flex flex-col gap-6 p-6 text-white bg-no-repeat contentbox"
+        className="container px-3 md:px-6 lg:px-12 mx-auto flex flex-col gap-6 p-6 text-white bg-no-repeat contentbox"
       >
         <h1 className="text-3xl4 md:text-4xl lg:text-6xl tracking-wide">
           WEB ARTIST SINCE 2020
