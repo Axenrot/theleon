@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "ForcedSquare";
+  src: url("./FORCED-SQUARE.woff") format("woff"),
+    url("./FORCED-SQUARE.ttf") format("truetype"),
+    url("./FORCED-SQUARE.otf") format("opentype");
+}

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @import "../public/fonts/AbsolutPro/absolut-pro.css";
+@import "../public/fonts/ColdWarm/Cold-Warm.css";
+@import "../public/fonts/ForcedSquare/FORCED-SQUARE.css";
 @import "../public/fonts/Shump.css";
 
 @layer base {

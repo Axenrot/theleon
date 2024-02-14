@@ -31,6 +31,8 @@ const config: Config = {
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
         shump: ["Shump", ...defaultTheme.fontFamily.sans],
         "absolut-pro": ["AbsolutPro", ...defaultTheme.fontFamily.sans],
+        "forced-square": ["ForcedSquare", ...defaultTheme.fontFamily.sans],
+        "cold-warm": ["ColdWarm", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
         "gradient-radial":

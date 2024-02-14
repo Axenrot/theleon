@@ -38,7 +38,7 @@ export default function ContactLinks() {
               {s.icon}
             </span>
             <div className="z-10 flex flex-col items-start">
-              <span className="w-full truncate duration-150 text-xl xl:text-2xl text-zinc-800/90 group-hover:text-black font-absolut-pro font-bold">
+              <span className="w-full truncate duration-150 text-lg xl:text-xl text-zinc-800/90 group-hover:text-black">
                 {s.handle}
               </span>
               <span className="text-sm font-light text-center duration-1000 text-zinc-100 group-hover:text-white">

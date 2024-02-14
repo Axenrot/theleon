@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "ColdWarm";
+  src: url("./Cold-Warm.woff") format("woff"),
+    url("./Cold-Warm.ttf") format("truetype"),
+    url("./Cold-Warm.otf") format("opentype");
+}

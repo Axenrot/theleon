@@ -36,20 +36,23 @@ const AboutMe = () => {
         // style={{ backgroundSize: "0% 100%" }}
         className="flex flex-col gap-6 p-6 text-white bg-no-repeat contentbox"
       >
-        <h1 className="text-3xl font-bold md:text-4xl lg:text-6xl">
+        <h1 className="text-3xl4 md:text-4xl lg:text-6xl tracking-wide">
           WEB ARTIST SINCE 2020
         </h1>
-        <span className="flex flex-col gap-3 text-2xl font-light italic font-absolut-pro md:text-3xl text-zinc-400 lg:text-4xl">
-          <p>
-            Web Developer passionate about creating user friendly and visually
-            appealing interfaces.
+        <span className="flex flex-col gap-6 text-2xl font-absolut-pro font-light drop-shadow-lg md:text-3xl text-zinc-300 lg:text-4xl">
+          <p className="leading-[45px]">
+            Passionate about creating user friendly and visually appealing
+            interfaces.
           </p>
-          <p>
-            Seeking for my first international career opportunity. I come with
-            experience in the role, Scrum management, effective problem-solving,
-            strong English proficiency, and the capability to handle anything
-            involving JavaScript
+          <p className="leading-[45px]">
+            I come with experience in the role,{" "}
+            <strong className="font-medium text-white">Scrum management</strong>
+            , effective problem-solving, strong{" "}
+            <strong className="font-medium text-white">English</strong>{" "}
+            proficiency, and the capability to handle anything involving{" "}
+            <strong className="font-medium text-white">JavaScript</strong>.
           </p>
+          <p>Seeking for my first international career opportunity!</p>
         </span>
         <div className="border-2 flex px-3 mt-6 text-lg md:text-xl xl:text-2xl text-zinc-200 overflow-hidden p-2 rounded-full w-full h-14">
           <div className="boxes items-center self-center flex gap-3 flex-nowrap whitespace-nowrap">

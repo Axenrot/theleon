@@ -55,8 +55,8 @@ const Jobs = () => {
   return (
     <div className="relative w-full pt-12 bg-gradient-to-b from-black/90 to-zinc-900/50 rotate-x-1 h-fit">
       <div className="container px-3 flex flex-col gap-12 pt-12 mx-auto mb-12 transition-all duration-500 select-none">
-        <h1 className="flex flex-col self-center justify-start w-full font-bold drop-shadow-xl">
-          <span className="flex text-white text-4xl sm:text-6xl font-bold md:text-4xl lg:text-6xl whitespace-nowrap">
+        <h1 className="flex flex-col self-center justify-start w-full drop-shadow-xl">
+          <span className="flex text-white text-4xl tracking-wide sm:text-6xl md:text-4xl lg:text-6xl whitespace-nowrap">
             Jobs<p className="text-zinc-600">.</p>
           </span>
           <span className=" text-2xl font-light md:text-2xl lg:text-3xl text-zinc-400">
@@ -72,17 +72,17 @@ const Jobs = () => {
                     data-reverse={index % 2 != 1}
                     className="relative data-[reverse=true]:md:flex-row-reverse flex flex-col justify-between w-full h-full gap-6 p-6 md:flex-row md:h-72"
                   >
-                    <span className="flex flex-col items-start justify-between flex-shrink gap-2 p-2 text-center text-white transition-all duration-300 md:w-1/2">
+                    <span className="flex flex-col items-start justify-between flex-shrink gap-2 text-center text-white transition-all duration-300 md:w-1/2">
                       <span className="flex flex-col items-start self-start w-full gap-1">
                         <span className="flex items-center justify-between w-full gap-1">
-                          <h3 className="w-full text-2xl sm:text-3xl font-bold text-start">
+                          <h3 className="w-full text-2xl sm:text-3xl text-start">
                             {title}
                           </h3>
-                          <h4 className="text-xs sm:text-sm font-bold font-absolut-pro whitespace-nowrap">
+                          <h4 className="text-xl sm:text-lg font-forced-square whitespace-nowrap">
                             {date}
                           </h4>
                         </span>
-                        <p className="w-full my-2 italic font-thin font-absolut-pro text-2xl leading-5 text-start">
+                        <p className="w-full my-2 font-light font-absolut-pro text-2xl leading-5 text-start">
                           &quot;{info}&quot;
                         </p>
                       </span>
@@ -98,19 +98,19 @@ const Jobs = () => {
                       <span className="flex gap-2">
                         {href != "/" ? (
                           <Link href={href} className="mt-3 btn-primary">
-                            <LinkIcon />
+                            <LinkIcon size={20} />
                             Visit
                           </Link>
                         ) : (
                           <button disabled className="mt-3 btn-primary">
-                            <LinkIcon />
+                            <LinkIcon size={20} />
                             Unavailable
                           </button>
                         )}
 
                         {git != "/" && (
                           <Link href={git} className="mt-3 btn-primary">
-                            <Github />
+                            <Github size={20} />
                             Visit
                           </Link>
                         )}
