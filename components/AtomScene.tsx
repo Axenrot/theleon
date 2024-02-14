@@ -36,7 +36,7 @@ const AtomScene = () => {
 
     container_tl.fromTo(
       "#container",
-      { left: "-50%" },
+      { left: "-50%", width: "80vh", height: "80vh" },
       {
         left: "0%",
         translateX: "-30%",
@@ -71,7 +71,7 @@ const AtomScene = () => {
 
     canva_tl.fromTo(
       containerRef.current,
-      { width: "50vh", height: "50vh" },
+      { width: "80vh", height: "80vh" },
       {
         width: "80vh",
         height: "80vh",
