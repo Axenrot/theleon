@@ -21,6 +21,8 @@ const AtomScene = () => {
         left: "100%",
         translateX: "-100%",
         bottom: "0%",
+        width: "30vh",
+        height: "30vh",
       },
       {
         left: "-50%",
