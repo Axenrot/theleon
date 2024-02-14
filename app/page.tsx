@@ -25,7 +25,7 @@ export default function Home() {
 
       <div className="relative flex flex-col items-center justify-center w-full h-screen select-none">
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-500/50 to-zinc-300/0" />
-        <span className="relative bg-[url('/black-texture.jpg')] bg-fixed z-10 text-transparent duration-1000 cursor-default text-9xl lg:text-[300px] bg-black/90 animate-title whitespace-nowrap bg-clip-text -mt-12">
+        <span className="relative bg-[url('/black-texture.jpg')] bg-fixed z-10 text-transparent duration-1000 cursor-default text-9xl lg:text-[300px] bg-black/90 animate-title whitespace-nowrap bg-clip-text ">
           <h2 className="absolute bottom-[95%] left-1 text-xl lg:text-2xl text-start text-zinc-700 animate-fade-in">
             Hello, I&apos;m
           </h2>

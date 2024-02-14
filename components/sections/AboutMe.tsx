@@ -34,7 +34,7 @@ const AboutMe = () => {
       <Buildings className="left-0 h-24" />
       <span
         // style={{ backgroundSize: "0% 100%" }}
-        className="flex flex-col gap-6 p-6 text-white bg-no-repeat contentbox"
+        className="container mx-auto px-3 flex flex-col gap-6 p-6 text-white bg-no-repeat contentbox"
       >
         <h1 className="text-3xl4 md:text-4xl lg:text-6xl tracking-wide">
           WEB ARTIST SINCE 2020
