@@ -3,7 +3,7 @@ import ChromeIcon from "@/components/icons/ChromeIcon";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 
-const AboutMe = () => {
+const AboutMe = ({ loading = false }: { loading?: boolean }) => {
   const perks = [
     "Expertise with frameworks and page design",
     "Clean and responsive, user-focused interfaces",
@@ -30,13 +30,15 @@ const AboutMe = () => {
   }, [preventEffect]);
 
   return (
-    <div className="relative flex flex-col w-full animate-fade-in-up bg-gradient-to-b to-black/90 from-black py-24">
-      <Buildings className="left-0 h-24" />
+    <div
+      data-loading={loading}
+      className="data-[loading=true]:hidden relative flex flex-col w-full bg-gradient-to-b to-black/90 from-black py-24"
+    >
       <span
         // style={{ backgroundSize: "0% 100%" }}
         className="container px-3 md:px-6 lg:px-12 mx-auto flex flex-col gap-6 p-6 text-white bg-no-repeat contentbox"
       >
-        <h1 className="text-3xl4 md:text-4xl lg:text-6xl tracking-wide">
+        <h1 className="flex text-white text-4xl tracking-wide sm:text-6xl md:text-4xl lg:text-6xl whitespace-nowrap">
           WEB ARTIST SINCE 2020
         </h1>
         <span className="flex flex-col gap-6 text-2xl font-absolut-pro font-light drop-shadow-lg md:text-3xl text-zinc-300 lg:text-4xl">

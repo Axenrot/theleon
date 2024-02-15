@@ -46,7 +46,7 @@ const config: Config = {
         "fade-left": "fade-left 3s ease-in-out forwards",
         "fade-right": "fade-right 3s ease-in-out forwards",
         "zoom-in-up": "zoomInUp 0.2s ease-in-out forwards",
-        "fade-in-up": "fadeInUp 2s ease-in-out forwards",
+        "fade-in-up": "fadeInUp 3s ease-in-out forwards",
       },
       keyframes: {
         "fade-in": {

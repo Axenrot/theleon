@@ -6,7 +6,7 @@ import Link from "next/link";
 import IconDisplay from "../IconDisplay";
 import { Github, Link as LinkIcon } from "lucide-react";
 
-const Jobs = () => {
+const Jobs = ({ loading = false }: { loading?: boolean }) => {
   const { width } = useWindowDimensions();
 
   const jobs = [
@@ -53,7 +53,10 @@ const Jobs = () => {
   ];
 
   return (
-    <div className="relative w-full pt-12 bg-gradient-to-b from-black/90 to-zinc-900/50 rotate-x-1 h-fit pb-12">
+    <div
+      data-loading={loading}
+      className="data-[loading=true]:hidden relative w-full pt-12 bg-gradient-to-b from-black/90 to-zinc-900/50 rotate-x-1 h-fit pb-12"
+    >
       <div className="container px-3 md:px-6 lg:px-12 flex flex-col gap-12 pt-12 mx-auto mb-12 transition-all duration-500 select-none">
         <h1 className="flex flex-col self-center justify-start w-full drop-shadow-xl">
           <span className="flex text-white text-4xl tracking-wide sm:text-6xl md:text-4xl lg:text-6xl whitespace-nowrap">
@@ -70,7 +73,7 @@ const Jobs = () => {
                 <Card key={`jobs-${index}`}>
                   <span
                     data-reverse={index % 2 != 1}
-                    className="relative data-[reverse=true]:md:flex-row-reverse flex flex-col justify-between w-full h-full gap-6 p-6 md:flex-row md:h-72"
+                    className="relative data-[reverse=true]:md:flex-row-reverse flex flex-col justify-between shadow-lg w-full h-full gap-6 p-6 md:flex-row md:h-72"
                   >
                     <span className="flex flex-col items-start justify-between flex-shrink gap-2 text-center text-white transition-all duration-300 md:w-1/2">
                       <span className="flex flex-col items-start self-start w-full gap-1">

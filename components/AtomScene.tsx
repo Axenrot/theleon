@@ -6,8 +6,7 @@ import Atom from "./models/Atom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
-const AtomScene = () => {
-  const [preventEffect, setPreventEffect] = useState<boolean>(false);
+const AtomScene = ({ loading = false }: { loading?: boolean }) => {
   const cameraPosition = new THREE.Vector3(0, 3, 0);
   const containerRef = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
@@ -19,18 +18,20 @@ const AtomScene = () => {
       "#container",
       {
         left: "100%",
+        opacity: "100%",
         translateX: "-100%",
         bottom: "0%",
         width: "30vh",
         height: "30vh",
       },
       {
-        left: "-50%",
+        left: "-80%",
+        opacity: "100%",
         translateX: "0%",
         top: "30%",
         zIndex: "-1",
-        width: "50vh",
-        height: "50vh",
+        width: "60vh",
+        height: "60vh",
         ease: "linear",
       },
       "1%"
@@ -38,7 +39,7 @@ const AtomScene = () => {
 
     container_tl.fromTo(
       "#container",
-      { left: "-50%", width: "80vh", height: "80vh" },
+      { left: "-120%", width: "80vh", height: "80vh" },
       {
         left: "0%",
         translateX: "-30%",
@@ -54,7 +55,7 @@ const AtomScene = () => {
       trigger: ".screen-container",
       start: "top top",
       end: "bottom bottom",
-      scrub: 2,
+      scrub: 3,
       animation: container_tl,
     });
 
@@ -62,10 +63,11 @@ const AtomScene = () => {
 
     canva_tl.fromTo(
       containerRef.current,
-      { width: "30vh", height: "30vh" },
+      { width: "30vh", height: "30vh", opacity: "100%" },
       {
-        width: "50vh",
-        height: "50vh",
+        opacity: "100%",
+        width: "60vh",
+        height: "60vh",
         ease: "linear",
       },
       "0%"
@@ -92,17 +94,15 @@ const AtomScene = () => {
   }
 
   useEffect(() => {
-    if (!preventEffect) {
+    if (!loading) {
       runGsap();
-    } else {
-      setPreventEffect(false);
     }
-  }, [preventEffect]);
+  }, [loading]);
 
-  return !preventEffect ? (
+  return (
     <span
       id="container"
-      className="fixed -z-10 animate-fade-in-delayed top-0 right-0 w-[30vh] h-[30vh]"
+      className="fixed -z-10 top-0 right-0 w-[30vh] h-[30vh]"
     >
       <Canvas
         ref={containerRef}
@@ -117,8 +117,6 @@ const AtomScene = () => {
         </Suspense>
       </Canvas>
     </span>
-  ) : (
-    <></>
   );
 };
 

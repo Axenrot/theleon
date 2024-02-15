@@ -4,12 +4,27 @@ import AtomScene from "@/components/AtomScene";
 import Jobs from "@/components/sections/Jobs";
 import Contact from "@/components/sections/Contact";
 import AboutMe from "@/components/sections/AboutMe";
+
 import { useEffect, useState } from "react";
+import Buildings from "@/components/Buildings";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
+  function preventScrollForTime(duration: number) {
+    // Disable scrolling
+    document.body.style.overflow = "hidden";
+
+    // Re-enable scrolling after the specified duration
+    setTimeout(() => {
+      document.body.style.overflow = ""; // Re-enable scrolling
+    }, duration);
+  }
+
+  // Example usage: Prevent scrolling for 3 seconds (3000 milliseconds)
+
   useEffect(() => {
+    preventScrollForTime(3000);
     setTimeout(() => {
       setLoading(false);
     }, 3000);
@@ -36,15 +51,13 @@ export default function Home() {
         </span>
 
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-500/50 to-zinc-300/0" />
+        <Buildings className="left-0 bottom-0 h-24 animate-fade-in-up" />
       </div>
-      {!loading && (
-        <>
-          <AtomScene />
-          <AboutMe />
-          <Jobs />
-          <Contact />
-        </>
-      )}
+
+      <AtomScene loading={loading} />
+      <AboutMe loading={loading} />
+      <Jobs loading={loading} />
+      <Contact loading={loading} />
     </div>
   );
 }
