@@ -17,9 +17,7 @@ const Buildings = ({ className }: BuildingsProps) => {
     }
   }, []);
   return (
-    <div
-      className={`${className} absolute bottom-[100%] z-50 self-start w-full`}
-    >
+    <div className={`${className} z-50 w-full`}>
       <span className="relative h-fit">
         <div
           style={{

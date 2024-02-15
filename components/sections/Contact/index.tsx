@@ -5,6 +5,7 @@ const Contact = ({ loading = false }: { loading?: boolean }) => {
   return (
     <section
       data-loading={loading}
+      id="contact"
       className="data-[loading=true]:hidden w-full py-6 bg-gradient-to-b from-zinc-900/50 to-transparent"
     >
       <span className="container px-3 md:px-6 lg:px-12 flex flex-col mx-auto">

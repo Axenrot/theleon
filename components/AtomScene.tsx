@@ -94,7 +94,15 @@ const AtomScene = ({ loading = false }: { loading?: boolean }) => {
   }
 
   useEffect(() => {
-    if (!loading) {
+    if (loading) {
+      gsap.fromTo(
+        "#container",
+        {
+          opacity: 0,
+        },
+        { opacity: 1, duration: 3, ease: "power4.in" }
+      );
+    } else if (!loading) {
       runGsap();
     }
   }, [loading]);

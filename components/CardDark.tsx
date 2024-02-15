@@ -19,7 +19,7 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
       onMouseMove={onMouseMove}
       className="relative z-10 overflow-hidden h-full w-full cursor-context-menu duration-700 border-[3px] select-none rounded-xl hover:bg-zinc-800/30 md:gap-8 hover:border-zinc-800/60 border-zinc-800/10 "
     >
-      <span className="absolute w-full h-full bg-[url('/black-texture.jpg')] bg-black -z-30" />
+      <span className="absolute w-full h-full bg-[url('/chill-stars.gif')] bg-black -z-30" />
       <span className="absolute w-full h-full bg-black/70 -z-20" />
       <div className="absolute w-full h-full">
         <div className="absolute inset-0 -z-10  transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />

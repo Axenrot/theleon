@@ -53,7 +53,7 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
   ];
 
   return (
-    <div
+    <section
       data-loading={loading}
       className="data-[loading=true]:hidden relative w-full pt-12 bg-gradient-to-b from-black/90 to-zinc-900/50 rotate-x-1 h-fit pb-12"
     >
@@ -135,7 +135,7 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
           )}
         </span>
       </div>
-    </div>
+    </section>
   );
 };
 
