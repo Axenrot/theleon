@@ -44,7 +44,9 @@ export default function Home() {
           <h2 className="absolute bottom-[95%] left-1 text-xl lg:text-2xl text-start text-zinc-700 animate-fade-in">
             Hi, I&apos;m
           </h2>
-          <h1 className="font-shump">Leon</h1>
+          <h1 className="font-shump" translate="no">
+            Leon
+          </h1>
           <h2 className="absolute top-[100%] right-0 text-xl lg:text-2xl text-start text-zinc-700 animate-fade-in">
             Web Developer
           </h2>

@@ -60,10 +60,10 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
       <div className="container px-3 md:px-6 lg:px-12 flex flex-col gap-12 pt-12 mx-auto mb-12 transition-all duration-500 select-none">
         <h1 className="flex flex-col self-center justify-start w-full drop-shadow-xl">
           <span className="flex text-white text-4xl tracking-wide sm:text-6xl md:text-4xl lg:text-6xl whitespace-nowrap">
-            Jobs<p className="text-zinc-600">.</p>
+            Works<p className="text-zinc-600">.</p>
           </span>
           <span className=" text-2xl font-light md:text-2xl lg:text-3xl text-zinc-400">
-            Check out some of my featured works
+            Check out some of my featured jobs
           </span>
         </h1>
         <span className="grid gap-6 xl:grid-cols-2">

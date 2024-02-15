@@ -26,6 +26,7 @@ const ContactForm = () => {
       })
       .then(() => {
         setEmailSent(true);
+        setOpenModal(true);
         // Swal.fire({
         //   title: "Thanks!",
         //   text: "Your message has been sent",
@@ -96,6 +97,9 @@ const ContactForm = () => {
             placeholder="Your Name"
             onChange={(e) => {
               setName(maskText(e.target.value));
+              if (emailSent) {
+                setEmailSent(false);
+              }
               // walk();
             }}
             // onBlur={() => setFormState("idling")}
@@ -117,6 +121,9 @@ const ContactForm = () => {
             placeholder="your@email.here"
             onChange={(e) => {
               setEmail(e.target.value.replaceAll(" ", ""));
+              if (emailSent) {
+                setEmailSent(false);
+              }
               // walk();
             }}
             // onBlur={() => setFormState("idling")}
@@ -140,6 +147,9 @@ const ContactForm = () => {
             minLength={10}
             onChange={(e) => {
               setPhone(maskPhone(e.target.value));
+              if (emailSent) {
+                setEmailSent(false);
+              }
               // walk();
             }}
           />
@@ -157,6 +167,9 @@ const ContactForm = () => {
             minLength={3}
             onChange={(e) => {
               setText(e.target.value);
+              if (emailSent) {
+                setEmailSent(false);
+              }
               // walk();
             }}
             // onBlur={() => setFormState("idling")}
