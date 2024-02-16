@@ -12,9 +12,11 @@ export default function GlobalError({
 }) {
   useEffect(() => {
     console.error(error);
-    setTimeout(() => {
-      reset();
-    }, 200);
+    if (typeof window !== "undefined") {
+      setTimeout(() => {
+        reset();
+      }, 200);
+    }
   }, [error, reset]);
 
   return (
