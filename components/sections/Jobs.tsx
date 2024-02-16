@@ -59,8 +59,11 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
     >
       <div className="container px-3 md:px-6 lg:px-12 flex flex-col gap-12 pt-12 mx-auto mb-12 transition-all duration-500 select-none">
         <h1 className="flex flex-col self-center justify-start w-full drop-shadow-xl">
-          <span className="flex text-white text-4xl tracking-wide sm:text-6xl md:text-4xl lg:text-6xl whitespace-nowrap">
-            Works<p className="text-zinc-600">.</p>
+          <span
+            translate="no"
+            className="flex text-white text-4xl tracking-wide sm:text-6xl md:text-4xl lg:text-6xl whitespace-nowrap"
+          >
+            Jobs<p className="text-zinc-600">.</p>
           </span>
           <span className=" text-2xl font-light md:text-2xl lg:text-3xl text-zinc-400">
             Check out some of my featured jobs
@@ -78,10 +81,16 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
                     <span className="flex flex-col items-start justify-between flex-shrink gap-2 text-center text-white transition-all duration-300 md:w-1/2">
                       <span className="flex flex-col items-start self-start w-full gap-1">
                         <span className="flex items-center justify-between w-full gap-1">
-                          <h3 className="w-full text-2xl sm:text-3xl text-start">
+                          <h3
+                            translate="no"
+                            className="w-full text-2xl sm:text-3xl text-start"
+                          >
                             {title}
                           </h3>
-                          <h4 className="text-xl sm:text-lg font-forced-square whitespace-nowrap">
+                          <h4
+                            translate="no"
+                            className="text-xl sm:text-lg font-forced-square whitespace-nowrap"
+                          >
                             {date}
                           </h4>
                         </span>

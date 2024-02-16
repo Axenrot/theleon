@@ -188,7 +188,7 @@ const ContactForm = () => {
           type="submit"
           disabled={loading}
           // onMouseEnter={() => playSound("/assets/sounds/btn.wav")}
-          className="align-middle text-lg select-none tracking-widest font-cold-warm text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none py-3 px-6 rounded-lg bg-zinc-800 text-white shadow-md shadow-zinc-900/10 hover:shadow-lg  hover:bg-zinc-900 hover:shadow-zinc-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+          className="align-middle text-lg lg:text-2xl select-none tracking-widest font-cold-warm text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none py-3 px-6 rounded-lg bg-zinc-800 text-white shadow-md shadow-zinc-900/10 hover:shadow-lg  hover:bg-zinc-900 hover:shadow-zinc-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
         >
           {loading ? "Loading..." : emailSent ? "Thanks" : "Submit"}
         </button>
