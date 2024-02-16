@@ -7,9 +7,11 @@ import { useRouter } from "next/router";
 export default function NotFound() {
   const router = useRouter();
   useEffect(() => {
-    setTimeout(() => {
-      router.push("/");
-    }, 200);
+    if (typeof window !== "undefined") {
+      setTimeout(() => {
+        router.push("/");
+      }, 200);
+    }
   }, [router]);
 
   return (
