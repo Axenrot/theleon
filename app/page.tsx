@@ -13,12 +13,14 @@ export default function Home() {
 
   function preventScrollForTime(duration: number) {
     // Disable scrolling
-    document.body.style.overflow = "hidden";
+    if (document.body) {
+      document.body.style.overflow = "hidden";
+      setTimeout(() => {
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }, duration);
+    }
 
     // Re-enable scrolling after the specified duration
-    setTimeout(() => {
-      document.body.style.overflow = ""; // Re-enable scrolling
-    }, duration);
   }
 
   // Example usage: Prevent scrolling for 3 seconds (3000 milliseconds)
@@ -38,7 +40,7 @@ export default function Home() {
         quantity={200}
       />
 
-      <div className="relative flex flex-col items-center justify-center w-full h-screen select-none">
+      <main className="relative flex flex-col items-center justify-center w-full h-screen select-none">
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-500/50 to-zinc-300/0" />
         <span className="relative bg-[url('/chill-stars.gif')] bg-size-200 bg-fixed z-10 text-transparent duration-1000 cursor-default text-9xl lg:text-[300px] bg-black/90 animate-title whitespace-nowrap bg-clip-text ">
           <h2 className="absolute bottom-[95%] left-1 text-xl lg:text-2xl text-start text-zinc-700 animate-fade-in">
@@ -56,7 +58,7 @@ export default function Home() {
         <span className="w-screen h-14 sm:h-6 bg-black absolute bottom-0 animate-fade-in-up">
           <Buildings className="absolute w-full bottom-[100%] h-24" />
         </span>
-      </div>
+      </main>
 
       <AtomScene loading={loading} />
       <AboutMe loading={loading} />

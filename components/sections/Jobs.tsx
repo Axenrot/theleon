@@ -55,7 +55,7 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
   return (
     <section
       data-loading={loading}
-      className="data-[loading=true]:hidden relative w-full pt-12 bg-gradient-to-b from-black/90 to-zinc-900/50 rotate-x-1 h-fit pb-12"
+      className="data-[loading=true]:hidden relative w-full bg-gradient-to-b from-black/90 to-zinc-900/60 rotate-x-1 h-fit py-24"
     >
       <div className="container px-3 md:px-6 lg:px-12 flex flex-col gap-12 pt-12 mx-auto mb-12 transition-all duration-500 select-none">
         <h1 className="flex flex-col self-center justify-start w-full drop-shadow-xl">

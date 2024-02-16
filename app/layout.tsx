@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Aperture } from "lucide-react";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://theleon.pro"),
@@ -48,9 +49,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Suspense fallback={<p>Loading feed...</p>}>
-        <body className={inter.className}>{children}</body>
-      </Suspense>
+      {/* <Suspense
+        fallback={
+          <div className="flex items-center justify-center w-full h-screen overflow-hidden">
+            <span className="animate-spin w-fit h-fit">
+              <Aperture size={36} />
+            </span>
+          </div>
+        }
+      > */}
+      <body className={"flex flex-col w-full h-full"}>{children}</body>
+      {/* </Suspense> */}
     </html>
   );
 }

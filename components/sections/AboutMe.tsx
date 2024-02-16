@@ -1,19 +1,22 @@
-import Buildings from "../Buildings";
 import ChromeIcon from "@/components/icons/ChromeIcon";
+import NutFillIcon from "@/components/icons/NutFillIcon";
 import gsap from "gsap";
-import Tween from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const AboutMe = ({ loading = false }: { loading?: boolean }) => {
-  const perks2 = [
-    "Expertise with frameworks and page design",
-    "Clean and responsive, user-focused interfaces",
-    "High standards of secure coding",
-    "Pro in learning new technologies and concepts",
-    "Extrovert and communicative",
-  ];
-
   const perks = [
+    "High Standards",
+    "JavaScript and English",
+    "Front-End Technologies",
+    "Responsive Design",
+    "Reusable Components",
+    "Secure Coding",
+    "API Consuming",
+    "State Management",
+    "Effective Communication",
+    "Rapidly adapts to new technologies",
+  ];
+  const slogans = [
     "GET MORE POWER",
     "REALIZE DREAMS",
     "CHOOSE EXCELLENCE",
@@ -59,51 +62,58 @@ const AboutMe = ({ loading = false }: { loading?: boolean }) => {
   return (
     <section
       data-loading={loading}
-      className="data-[loading=true]:hidden relative flex flex-col w-full bg-gradient-to-b to-black/90 from-black py-24"
+      className="data-[loading=true]:hidden relative flex flex-col w-full bg-gradient-to-b to-black/90 from-black md:pt-12 lg:pt-24"
     >
-      <span
-        // style={{ backgroundSize: "0% 100%" }}
-        className="container px-3 md:px-6 lg:px-12 mx-auto flex flex-col gap-6 p-6 text-white bg-no-repeat contentbox"
-      >
-        <h1 className="flex text-white text-4xl tracking-wide sm:text-6xl md:text-4xl lg:text-6xl whitespace-nowrap">
-          WEB ARTIST SINCE 2020
+      <span className="container px-3 md:px-6 lg:px-12 mx-auto flex flex-col p-6 text-white bg-no-repeat contentbox">
+        <h1 className="flex flex-col self-center justify-start w-full drop-shadow-xl">
+          <span className="w-full flex text-white text-5xl tracking-wide sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl text-center justify-center md:justify-start md:text-start md:whitespace-nowrap">
+            WEB ARTIST SINCE 2020
+          </span>
+          <span className=" text-3xl font-light md:text-3xl lg:text-4xl xl:text-5xl text-zinc-400 text-center md:text-start md:whitespace-nowrap">
+            Professional interface developer
+          </span>
         </h1>
-        <span className="flex flex-col gap-6 text-2xl font-absolut-pro font-light drop-shadow-lg md:text-3xl text-zinc-300 lg:text-4xl">
-          <p className="leading-[45px]">
-            Passionate about creating user friendly and visually appealing
-            interfaces.
-          </p>
-          <p className="leading-[45px]">
-            Experienced in the roles:{" "}
-            <strong className="font-medium text-white">SCRUM management</strong>
-            , effective problem-solving, strong{" "}
-            <strong className="font-medium text-white">English</strong>{" "}
-            proficiency, and the capability to handle anything involving{" "}
-            <strong className="font-medium text-white">JavaScript</strong>.
-          </p>
-          <p>Seeking for my first international career opportunity!</p>
-        </span>
-        <div
+
+        <h2 className="text-4xl mt-16 font-cold-warm text-white">Mastery</h2>
+        <div className="h-px md:block bg-gradient-to-r w-1/2 from-zinc-500/50 via-zinc-300/10 to-zinc-300/0" />
+
+        <ul className="py-6 font-light gap-1 list-none list-inside flex flex-col font-absolut-pro">
+          {perks.map((perk, index) => (
+            <li
+              key={index}
+              className="flex gap-2 text-2xl sm:text-3xl md:text-4xl items-center"
+            >
+              <NutFillIcon height={20} width={20} /> {perk}
+            </li>
+          ))}
+        </ul>
+        <button
           onMouseEnter={pauseAnimation}
           onMouseLeave={resumeAnimation}
           onClick={scrollToContact}
-          className="cursor-pointer select-none hover:ring-4 hover:text-black hover:bg-white  ring-zinc-200 transition-all duration-200 ring-2 flex px-3 mt-6 text-lg md:text-xl xl:text-2xl text-zinc-200 overflow-hidden p-2 rounded-full w-full h-14"
+          className="cursor-pointer select-none hover:ring-4 hover:text-black hover:bg-white  ring-zinc-200 transition-all duration-200 ring-2 flex px-3 mt-6 text-lg md:text-xl xl:text-2xl text-zinc-200 overflow-hidden p-2 rounded-full w-full h-12 md:h-14"
         >
           <div className="boxes items-center self-center flex gap-3 flex-nowrap whitespace-nowrap">
-            {perks.map((perk, index) => {
+            {slogans.map((slogan, index) => {
               return (
-                <div className="flex gap-3 items-center" key={`perk-${index}`}>
-                  <div className="text-4xl">{perk}</div>
+                <div
+                  className="flex gap-3 items-center"
+                  key={`slogan-${index}`}
+                >
+                  <div className="text-2xl md:text-4xl">{slogan}</div>
                   <span className={"animate-rotate"}>
                     <ChromeIcon width={30} height={30} />
                   </span>
                 </div>
               );
             })}
-            {perks.map((perk, index) => {
+            {slogans.map((slogan, index) => {
               return (
-                <div className="flex gap-3 items-center" key={`perk2-${index}`}>
-                  <div className="text-4xl">{perk}</div>
+                <div
+                  className="flex gap-3 items-center"
+                  key={`slogan2-${index}`}
+                >
+                  <div className="text-2xl md:text-4xl">{slogan}</div>
                   <span className={"animate-rotate"}>
                     <ChromeIcon width={30} height={30} />
                   </span>
@@ -111,7 +121,7 @@ const AboutMe = ({ loading = false }: { loading?: boolean }) => {
               );
             })}
           </div>
-        </div>
+        </button>
       </span>
     </section>
   );
