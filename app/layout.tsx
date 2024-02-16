@@ -49,17 +49,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <Suspense
+      <Suspense
         fallback={
-          <div className="flex items-center justify-center w-full h-screen overflow-hidden">
+          <body className="flex items-center justify-center w-full h-screen overflow-hidden">
             <span className="animate-spin w-fit h-fit">
               <Aperture size={36} />
             </span>
-          </div>
+          </body>
         }
-      > */}
-      <body className={"flex flex-col w-full h-full"}>{children}</body>
-      {/* </Suspense> */}
+      >
+        <body className={"flex flex-col w-full h-full"}>{children}</body>
+      </Suspense>
     </html>
   );
 }
