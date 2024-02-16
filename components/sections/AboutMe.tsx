@@ -65,7 +65,7 @@ const AboutMe = ({ loading = false }: { loading?: boolean }) => {
       className="data-[loading=true]:hidden relative flex flex-col w-full bg-gradient-to-b to-black/90 from-black md:pt-12 lg:pt-24"
     >
       <span className="container px-3 md:px-6 lg:px-12 mx-auto flex flex-col p-6 text-white bg-no-repeat contentbox">
-        <h1 className="flex flex-col self-center justify-start w-full drop-shadow-xl">
+        <h1 className="flex select-none flex-col self-center justify-start w-full drop-shadow-xl">
           <span className="w-full flex text-white text-5xl tracking-wide sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl text-center justify-center md:justify-start md:text-start md:whitespace-nowrap">
             WEB ARTIST SINCE 2020
           </span>
@@ -74,14 +74,16 @@ const AboutMe = ({ loading = false }: { loading?: boolean }) => {
           </span>
         </h1>
 
-        <h2 className="text-4xl mt-16 font-cold-warm text-white">Mastery</h2>
+        <h2 className="flex select-none text-4xl mt-16 font-cold-warm text-white">
+          Mastery
+        </h2>
         <div className="h-px md:block bg-gradient-to-r w-1/2 from-zinc-500/50 via-zinc-300/10 to-zinc-300/0" />
 
-        <ul className="py-6 font-light gap-1 list-none list-inside flex flex-col font-absolut-pro">
+        <ul className="py-6 select-none font-light list-none list-inside flex flex-col font-absolut-pro">
           {perks.map((perk, index) => (
             <li
               key={index}
-              className="flex gap-2 text-2xl sm:text-3xl md:text-4xl items-center"
+              className="flex gap-2 hover:text-black hover:font-bold hover:bg-white p-2 pb-1 rounded-sm transition-all duration-200 text-2xl sm:text-3xl md:text-4xl items-center"
             >
               <NutFillIcon height={20} width={20} /> {perk}
             </li>
