@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
 const AtomScene = ({ loading = false }: { loading?: boolean }) => {
+  const [preventEffect, setPreventEffect] = useState(true);
   const cameraPosition = new THREE.Vector3(0, 3, 0);
   const containerRef = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
@@ -94,7 +95,9 @@ const AtomScene = ({ loading = false }: { loading?: boolean }) => {
   }
 
   useEffect(() => {
-    if (loading) {
+    if (preventEffect) {
+      setPreventEffect(false);
+    } else if (loading) {
       gsap.fromTo(
         "#container",
         {
@@ -105,7 +108,7 @@ const AtomScene = ({ loading = false }: { loading?: boolean }) => {
     } else if (!loading) {
       runGsap();
     }
-  }, [loading]);
+  }, [loading, preventEffect]);
 
   return (
     <span
