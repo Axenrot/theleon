@@ -40,7 +40,6 @@ export default function ContactLinks({ loading }: { loading: boolean }) {
           duration: 0.2,
           translateX: 0,
           stagger: 0.1,
-          // delay: 0.2,
           ease: "linear",
           scrollTrigger: {
             trigger: ".contact-card",

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { maskText, maskPhone } from "@/util/masks.js";
 import axios from "axios";
 import Modal from "@/components/Modal";
-import SplitType from "@/components/SplitType";
 import gsap from "gsap";
 
 const ContactForm = ({ loading }: { loading: boolean }) => {
@@ -66,15 +65,18 @@ const ContactForm = ({ loading }: { loading: boolean }) => {
       gsap.fromTo(
         ".contact-title",
         {
-          y: 50,
+          opacity: 0,
+          x: -100,
         },
         {
-          y: 0,
+          x: 0,
+          opacity: 1,
           duration: 0.3,
+          delay: 0.1,
           stagger: 0.05,
           scrollTrigger: {
             trigger: ".contact-title",
-            toggleActions: "play pause resume reset",
+            toggleActions: "play none resume reset",
           },
         }
       );
@@ -82,16 +84,18 @@ const ContactForm = ({ loading }: { loading: boolean }) => {
       gsap.fromTo(
         ".contact-subtitle",
         {
-          y: 50,
+          opacity: 0,
+          x: -100,
         },
         {
-          y: 0,
+          x: 0,
+          opacity: 1,
           duration: 0.3,
           stagger: 0.03,
-          delay: 0.1,
+          delay: 0.3,
           scrollTrigger: {
             trigger: ".contact-subtitle",
-            toggleActions: "play pause resume reset",
+            toggleActions: "play none resume reset",
           },
         }
       );
@@ -107,32 +111,12 @@ const ContactForm = ({ loading }: { loading: boolean }) => {
           duration: 0.2,
           translateX: 0,
           stagger: 0.05,
-          // delay: 0.2,
+          delay: 0.2,
           ease: "linear",
           scrollTrigger: {
             trigger: ".contact-input",
             start: "top bottom",
-            toggleActions: "play pause resume reset",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        ".contact-button",
-        {
-          opacity: 0,
-          translateY: -30,
-        },
-        {
-          opacity: 1,
-          duration: 0.2,
-          translateY: 0,
-          // delay: 0.2,
-          ease: "linear",
-          scrollTrigger: {
-            trigger: ".contact-button",
-            start: "top bottom",
-            toggleActions: "play pause resume reset",
+            toggleActions: "play none resume reset",
           },
         }
       );
@@ -143,16 +127,11 @@ const ContactForm = ({ loading }: { loading: boolean }) => {
     <div className="select-none flex justify-between h-full flex-col transition-all duration-500 w-full md:w-1/2 lg:w-2/3 gap-12">
       <Modal modalOpen={openModal} setModalOpen={setOpenModal} />
       <span>
-        <h1 className="flex overflow-hidden text-4xl sm:text-6xl tracking-wide md:text-4xl lg:text-6xl whitespace-nowrap">
-          <SplitType text={"Get in touch"} className="contact-title" />
-          <p className="contact-title text-zinc-600">.</p>
+        <h1 className="contact-title flex text-4xl sm:text-6xl tracking-wide md:text-4xl lg:text-6xl whitespace-nowrap">
+          Get in touch<p className="text-zinc-600">.</p>
         </h1>
-        <h2 className="flex overflow-hidden text-2xl font-light md:text-2xl lg:text-3xl text-zinc-600">
-          <SplitType
-            text="Let's work together"
-            className="contact-subtitle"
-            wordGap={10}
-          />
+        <h2 className="contact-subtitle flex text-2xl font-light md:text-2xl lg:text-3xl text-zinc-600">
+          Let&apos;s work together
         </h2>
       </span>
       <form
@@ -264,7 +243,7 @@ const ContactForm = ({ loading }: { loading: boolean }) => {
           type="submit"
           disabled={sending}
           // onMouseEnter={() => playSound("/assets/sounds/btn.wav")}
-          className="contact-btn align-middle text-lg lg:text-2xl select-none tracking-widest font-cold-warm text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none py-3 px-6 rounded-lg bg-zinc-800 text-white shadow-md shadow-zinc-900/10 hover:shadow-lg  hover:bg-zinc-900 hover:shadow-zinc-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+          className="contact-input align-middle text-lg lg:text-2xl select-none tracking-widest font-cold-warm text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none py-3 px-6 rounded-lg bg-zinc-800 text-white shadow-md shadow-zinc-900/10 hover:shadow-lg  hover:bg-zinc-900 hover:shadow-zinc-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
         >
           {sending ? "Loading..." : emailSent ? "Thanks" : "Submit"}
         </button>

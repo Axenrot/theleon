@@ -7,7 +7,6 @@ import IconDisplay from "../IconDisplay";
 import { Github, Link as LinkIcon } from "lucide-react";
 import { useEffect } from "react";
 import gsap from "gsap";
-import SplitType from "../SplitType";
 
 const Jobs = ({ loading = false }: { loading?: boolean }) => {
   const { width } = useWindowDimensions();
@@ -18,7 +17,14 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
       src: "/screens/acelera.png",
       date: "Dec 2023 - Jan 2024",
       alt: "Acelera Image",
-      stack: ["React", "Node.js", "Tailwind", "JavaScript", "GitHub", "Docker"],
+      stack: [
+        "React.js",
+        "Node.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "GitHub",
+        "Docker",
+      ],
       info: "Autoparts E-Commerce",
       href: "/",
       git: "/",
@@ -28,7 +34,14 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
       src: "/screens/hubbi-web.png",
       date: "Sep 2022 - Dec 2023",
       alt: "Hubbi Image",
-      stack: ["React", "Tailwind", "JavaScript", "Node.js", "GitLab", "AWS"],
+      stack: [
+        "React.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "Node.js",
+        "GitLab",
+        "AWS",
+      ],
       info: "Autoparts Marketplace platform that connects consumers, retailers, and suppliers",
       href: "https://hubbi.app",
       git: "/",
@@ -38,7 +51,7 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
       src: "/screens/starwiki-web.png",
       date: "Sep 2022",
       alt: "StarWiki Image",
-      stack: ["JavaScript", "React", "Tailwind", "GitHub"],
+      stack: ["JavaScript", "React.js", "Tailwind CSS", "GitHub"],
       info: "API consuming challenge from 2022",
       href: "https://star-wiki.vercel.app/",
       git: "https://github.com/Axenrot/star-wiki",
@@ -48,7 +61,7 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
       src: "/screens/gamemind-web.png",
       date: "Jul 2021 - Sep 2022",
       alt: "GameMind Image",
-      stack: ["JavaScript", "React", "Tailwind", "Next.js", "GitHub"],
+      stack: ["JavaScript", "React.js", "Tailwind CSS", "Next.js", "GitHub"],
       info: "Gamified Education Platform",
       href: "https://gmnd.vercel.app/",
       git: "/",
@@ -60,15 +73,18 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
       gsap.fromTo(
         ".jobs-title",
         {
-          y: 50,
+          opacity: 0,
+          x: -100,
         },
         {
-          y: 0,
-          duration: 0.3,
+          x: 0,
+          opacity: 1,
+          delay: 0.1,
+          duration: 0.2,
           stagger: 0.05,
           scrollTrigger: {
             trigger: ".jobs-title",
-            toggleActions: "play pause resume reset",
+            toggleActions: "play none resume reset",
           },
         }
       );
@@ -76,56 +92,42 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
       gsap.fromTo(
         ".jobs-subtitle",
         {
-          y: 50,
+          opacity: 0,
+          x: -100,
         },
         {
-          y: 0,
-          duration: 0.3,
+          x: 0,
+          opacity: 1,
+          duration: 0.2,
           stagger: 0.03,
-          delay: 0.1,
+          delay: 0.3,
           scrollTrigger: {
             trigger: ".jobs-subtitle",
-            toggleActions: "play pause resume reset",
+            toggleActions: "play none resume reset",
           },
         }
       );
 
-      gsap.fromTo(
-        ".left-card",
-        {
-          opacity: 0,
-          translateX: -50,
-        },
-        {
-          opacity: 1,
-          duration: 0.3,
-          stagger: 0.5,
-          translateX: 0,
-          scrollTrigger: {
-            trigger: ".left-card",
-
-            toggleActions: "play pause resume reset",
+      jobs.forEach((_, index) => {
+        gsap.fromTo(
+          `.card-${index}`,
+          {
+            opacity: 0,
+            translateX: index % 2 != 1 ? 50 : -50,
           },
-        }
-      );
-
-      gsap.fromTo(
-        ".right-card",
-        {
-          opacity: 0,
-          translateX: 50,
-        },
-        {
-          opacity: 1,
-          duration: 0.3,
-          stagger: 0.5,
-          translateX: 0,
-          scrollTrigger: {
-            trigger: ".right-card",
-            toggleActions: "play pause resume reset",
-          },
-        }
-      );
+          {
+            opacity: 1,
+            duration: 0.3,
+            stagger: 0.5,
+            delay: 0.2,
+            translateX: 0,
+            scrollTrigger: {
+              trigger: `.card-${index}`,
+              toggleActions: "play none resume reset",
+            },
+          }
+        );
+      });
     }
   }, [loading]);
 
@@ -138,27 +140,19 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
         <h1 className="relative flex flex-col self-center justify-start w-full drop-shadow-xl">
           <span
             translate="no"
-            className="flex overflow-hidden text-white text-4xl tracking-wide sm:text-6xl md:text-4xl lg:text-6xl whitespace-nowrap"
+            className="jobs-title flex text-white text-4xl tracking-wide sm:text-6xl md:text-4xl lg:text-6xl whitespace-nowrap"
           >
-            <SplitType text="Jobs" className="jobs-title" />
-            <p className="jobs-title text-zinc-600">.</p>
+            Jobs<p className="text-zinc-600">.</p>
           </span>
-          <span className="flex overflow-hidden text-2xl font-light md:text-2xl lg:text-3xl text-zinc-400">
-            <SplitType
-              text="Check out some of my featured jobs"
-              className="jobs-subtitle"
-              wordGap={10}
-            />
+          <span className="jobs-subtitle text-2xl font-light md:text-2xl lg:text-3xl text-zinc-400">
+            Check out some of my featured jobs
           </span>
         </h1>
         <span className="grid gap-6 xl:grid-cols-2 cards">
           {jobs.map(
             ({ title, date, info, src, alt, href, git, stack }, index) => {
               return (
-                <Card
-                  key={`jobs-${index}`}
-                  target={`${index % 2 != 1 ? "left-card" : "right-card"}`}
-                >
+                <Card key={`jobs-${index}`} target={`card-${index}`}>
                   <span
                     data-reverse={index % 2 != 1}
                     className=" relative data-[reverse=true]:md:flex-row-reverse flex flex-col justify-between shadow-lg w-full h-full gap-6 p-6 md:flex-row md:h-72"
