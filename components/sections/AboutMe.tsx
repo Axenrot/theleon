@@ -83,12 +83,13 @@ const AboutMe = ({ loading = false }: { loading?: boolean }) => {
         {
           opacity: 1,
           duration: 0.2,
+          delay: 0.2,
           translateX: 0,
           stagger: 0.05,
           // delay: 0.2,
           ease: "linear",
           scrollTrigger: {
-            trigger: ".mastery",
+            trigger: ".perk",
             start: "top bottom",
             toggleActions: "play none resume reset",
           },
