@@ -44,7 +44,7 @@ const AboutMe = ({ loading = false }: { loading?: boolean }) => {
         },
         {
           y: 0,
-          duration: 0.5,
+          duration: 0.3,
           stagger: 0.05,
           scrollTrigger: {
             trigger: ".about-title",
@@ -60,7 +60,7 @@ const AboutMe = ({ loading = false }: { loading?: boolean }) => {
         },
         {
           y: 0,
-          duration: 0.5,
+          duration: 0.3,
           stagger: 0.03,
           delay: 0.1,
           scrollTrigger: {

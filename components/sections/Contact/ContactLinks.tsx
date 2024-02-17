@@ -2,6 +2,8 @@
 import { Github, Mail, Linkedin } from "lucide-react";
 import { Card } from "../../CardLight";
 import Link from "next/link";
+import gsap from "gsap";
+import { useEffect } from "react";
 
 const socials = [
   {
@@ -24,11 +26,35 @@ const socials = [
   },
 ];
 
-export default function ContactLinks() {
+export default function ContactLinks({ loading }: { loading: boolean }) {
+  useEffect(() => {
+    if (!loading) {
+      gsap.fromTo(
+        ".contact-card",
+        {
+          opacity: 0,
+          translateX: 50,
+        },
+        {
+          opacity: 1,
+          duration: 0.2,
+          translateX: 0,
+          stagger: 0.1,
+          // delay: 0.2,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: ".contact-card",
+            start: "top bottom",
+            toggleActions: "play pause resume reset",
+          },
+        }
+      );
+    }
+  }, [loading]);
   return (
     <div className="flex flex-col items-end justify-end w-full pt-6 border-t md:border-t-0 gap-6 mx-auto md:w-1/2 lg:w-1/3">
       {socials.map((s) => (
-        <Card key={`socials-${s.label}`}>
+        <Card key={`socials-${s.label}`} target={"contact-card"}>
           <Link
             href={s.href}
             target="_blank"

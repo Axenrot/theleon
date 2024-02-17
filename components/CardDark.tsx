@@ -1,8 +1,14 @@
 "use client";
 import { motion, useMotionTemplate, useSpring } from "framer-motion";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
-export const Card: React.FC<PropsWithChildren> = ({ children }) => {
+export const Card = ({
+  children,
+  target = "",
+}: {
+  target?: string;
+  children: ReactNode;
+}) => {
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
@@ -17,7 +23,7 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div
       onMouseMove={onMouseMove}
-      className="cards relative z-10 overflow-hidden h-full w-full cursor-context-menu duration-700 border-[3px] select-none rounded-xl hover:bg-zinc-800/30 md:gap-8 hover:border-zinc-800/60 border-zinc-800/10 "
+      className={`${target} relative z-10 overflow-hidden h-full w-full cursor-context-menu duration-700 border-[3px] select-none rounded-xl hover:bg-zinc-800/30 md:gap-8 hover:border-zinc-800/60 border-zinc-800/10`}
     >
       <span className="absolute w-full h-full bg-[url('/chill-stars.gif')] bg-black -z-30" />
       <span className="absolute w-full h-full bg-black/70 -z-20" />

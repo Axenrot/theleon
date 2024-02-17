@@ -64,7 +64,7 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
         },
         {
           y: 0,
-          duration: 0.5,
+          duration: 0.3,
           stagger: 0.05,
           scrollTrigger: {
             trigger: ".jobs-title",
@@ -80,7 +80,7 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
         },
         {
           y: 0,
-          duration: 0.5,
+          duration: 0.3,
           stagger: 0.03,
           delay: 0.1,
           scrollTrigger: {
@@ -91,18 +91,37 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
       );
 
       gsap.fromTo(
-        ".cards",
+        ".left-card",
+        {
+          opacity: 0,
+          translateX: -50,
+        },
+        {
+          opacity: 1,
+          duration: 0.3,
+          stagger: 0.5,
+          translateX: 0,
+          scrollTrigger: {
+            trigger: ".left-card",
+
+            toggleActions: "play pause resume reset",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".right-card",
         {
           opacity: 0,
           translateX: 50,
         },
         {
           opacity: 1,
-          duration: 0.5,
+          duration: 0.3,
+          stagger: 0.5,
           translateX: 0,
           scrollTrigger: {
-            trigger: ".cards",
-
+            trigger: ".right-card",
             toggleActions: "play pause resume reset",
           },
         }
@@ -121,7 +140,7 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
             translate="no"
             className="flex overflow-hidden text-white text-4xl tracking-wide sm:text-6xl md:text-4xl lg:text-6xl whitespace-nowrap"
           >
-            <SplitType text="Jobs" className="jobs-title" />{" "}
+            <SplitType text="Jobs" className="jobs-title" />
             <p className="jobs-title text-zinc-600">.</p>
           </span>
           <span className="flex overflow-hidden text-2xl font-light md:text-2xl lg:text-3xl text-zinc-400">
@@ -136,7 +155,10 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
           {jobs.map(
             ({ title, date, info, src, alt, href, git, stack }, index) => {
               return (
-                <Card key={`jobs-${index}`}>
+                <Card
+                  key={`jobs-${index}`}
+                  target={`${index % 2 != 1 ? "left-card" : "right-card"}`}
+                >
                   <span
                     data-reverse={index % 2 != 1}
                     className=" relative data-[reverse=true]:md:flex-row-reverse flex flex-col justify-between shadow-lg w-full h-full gap-6 p-6 md:flex-row md:h-72"
