@@ -2,6 +2,7 @@ import ChromeIcon from "@/components/icons/ChromeIcon";
 import NutFillIcon from "@/components/icons/NutFillIcon";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import SplitType from "../SplitType";
 
 const AboutMe = ({ loading = false }: { loading?: boolean }) => {
   const perks = [
@@ -35,6 +36,60 @@ const AboutMe = ({ loading = false }: { loading?: boolean }) => {
         duration: 50,
         repeat: -1,
       });
+
+      gsap.fromTo(
+        ".about-title",
+        {
+          y: 50,
+        },
+        {
+          y: 0,
+          duration: 0.5,
+          stagger: 0.05,
+          scrollTrigger: {
+            trigger: ".about-title",
+            toggleActions: "play pause resume reset",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".about-subtitle",
+        {
+          y: 50,
+        },
+        {
+          y: 0,
+          duration: 0.5,
+          stagger: 0.03,
+          delay: 0.1,
+          scrollTrigger: {
+            trigger: ".about-subtitle",
+            toggleActions: "play pause resume reset",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".perk",
+        {
+          opacity: 0,
+          translateX: 50,
+        },
+        {
+          opacity: 1,
+          duration: 0.2,
+          translateX: 0,
+          stagger: 0.05,
+          // delay: 0.2,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: ".mastery",
+            start: "top bottom",
+            toggleActions: "play pause resume reset",
+          },
+        }
+      );
     }
   }, [loading]);
 
@@ -65,30 +120,36 @@ const AboutMe = ({ loading = false }: { loading?: boolean }) => {
       className="data-[loading=true]:hidden relative flex flex-col w-full bg-gradient-to-b to-black/90 from-black md:pt-12 lg:pt-24"
     >
       <span className="container px-3 md:px-6 lg:px-12 mx-auto flex flex-col p-6 text-white bg-no-repeat contentbox">
-        <h1 className="flex select-none flex-col self-center justify-start w-full drop-shadow-xl">
-          <span className="w-full flex text-white text-5xl tracking-wide sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl text-center justify-center md:justify-start md:text-start md:whitespace-nowrap">
-            WEB ARTIST SINCE 2020
+        <h1 className="relative  flex select-none flex-col self-center justify-start w-full drop-shadow-xl">
+          <span className="overflow-hidden gap-0 w-full flex text-white text-5xl tracking-wide sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl text-center justify-center md:justify-start md:text-start md:whitespace-nowrap">
+            <SplitType text={"WEB ARTIST SINCE 2020"} className="about-title" />
           </span>
-          <span className=" text-3xl font-light md:text-3xl lg:text-4xl xl:text-5xl text-zinc-400 text-center md:text-start md:whitespace-nowrap">
-            Professional interface developer
+          <span className="flex overflow-hidden text-3xl font-light md:text-3xl lg:text-4xl xl:text-5xl text-zinc-400 text-center md:text-start md:whitespace-nowrap">
+            <SplitType
+              text={"Professional interface developer"}
+              className="about-subtitle"
+              wordGap={20}
+            />
           </span>
         </h1>
 
-        <h2 className="flex select-none text-4xl mt-16 font-cold-warm text-white">
-          Mastery
-        </h2>
-        <div className="h-px md:block bg-gradient-to-r w-1/2 from-zinc-500/50 via-zinc-300/10 to-zinc-300/0" />
+        <span className="mastery flex flex-col">
+          <h2 className="flex select-none text-4xl mt-16 font-cold-warm text-white">
+            Mastery
+          </h2>
+          <div className="h-px md:block bg-gradient-to-r w-1/2 from-zinc-500/50 via-zinc-300/10 to-zinc-300/0" />
 
-        <ul className="py-6 select-none font-light list-none list-inside flex flex-col font-absolut-pro">
-          {perks.map((perk, index) => (
-            <li
-              key={index}
-              className="flex gap-2 hover:text-black hover:font-bold hover:bg-white p-2 pb-1 rounded-sm transition-all duration-200 text-2xl sm:text-3xl md:text-4xl items-center"
-            >
-              <NutFillIcon height={20} width={20} /> {perk}
-            </li>
-          ))}
-        </ul>
+          <ul className="py-6 select-none font-light list-none list-inside flex flex-col font-absolut-pro">
+            {perks.map((perk, index) => (
+              <li
+                key={index}
+                className="perk flex gap-2 hover:text-black hover:font-bold hover:bg-white p-2 pb-1 rounded-sm transition-all duration-200 text-2xl sm:text-3xl md:text-4xl items-center"
+              >
+                <NutFillIcon height={20} width={20} /> {perk}
+              </li>
+            ))}
+          </ul>
+        </span>
         <button
           onMouseEnter={pauseAnimation}
           onMouseLeave={resumeAnimation}
