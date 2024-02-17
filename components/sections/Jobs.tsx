@@ -113,12 +113,11 @@ const Jobs = ({ loading = false }: { loading?: boolean }) => {
           `.card-${index}`,
           {
             opacity: 0,
-            translateX: index % 2 != 1 ? 50 : -50,
+            translateX: index % 2 != 1 ? -30 : 30,
           },
           {
             opacity: 1,
             duration: 0.3,
-            stagger: 0.5,
             delay: 0.2,
             translateX: 0,
             scrollTrigger: {

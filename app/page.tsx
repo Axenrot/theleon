@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-full min-h-screen overflow-hidden screen-container font-cold-warm">
+    <div className="flex flex-col items-center justify-center h-full min-h-screen overflow-hidden scrollbar screen-container font-cold-warm">
       <span className="fixed top-0 left-0 w-full h-full -z-40 bg-gradient-to-tl from-white via-white/10 to-white" />
       <Particles
         className="fixed inset-0 -z-50 animate-fade-in "
@@ -55,7 +55,7 @@ export default function Home() {
         </span>
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-500/50 to-zinc-300/0" />
 
-        <span className="w-screen h-14 sm:h-6 bg-black absolute bottom-0 animate-fade-in-up">
+        <span className="w-full h-14 sm:h-6 bg-black absolute bottom-0 animate-fade-in-up">
           <Buildings className="absolute w-full bottom-[100%] h-24" />
         </span>
       </main>

@@ -58,7 +58,9 @@ export default function RootLayout({
           </body>
         }
       >
-        <body className={"flex flex-col w-full h-full"}>{children}</body>
+        <body className={"flex flex-col w-full h-full scrollbar"}>
+          {children}
+        </body>
       </Suspense>
     </html>
   );
