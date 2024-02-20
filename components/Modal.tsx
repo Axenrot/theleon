@@ -7,7 +7,6 @@ const Modal = ({
   modalOpen: boolean;
   setModalOpen: (arg: boolean) => void;
 }) => {
-  const trigger = useRef(null);
   const modal = useRef(null);
 
   // close if the esc key is pressed
@@ -31,33 +30,25 @@ const Modal = ({
           ref={modal}
           onFocus={() => setModalOpen(true)}
           onBlur={() => setModalOpen(false)}
-          className="w-full max-w-[570px] rounded-[20px] bg-white px-8 py-12 text-center dark:bg-dark-2 md:px-[70px] md:py-[60px]"
+          className="w-full max-w-[570px] rounded-[20px] shadow-2xl bg-white px-8 py-12 text-center dark:bg-dark-2 md:px-[70px] md:py-[60px]"
         >
-          <h3 className="pb-[18px] text-xl font-semibold sm:text-2xl">
+          <h3 className="pb-[18px] text-xl font-light sm:text-2xl">
             Your Message Sent Successfully
           </h3>
           <span
             className={`mx-auto mb-6 inline-block h-1 w-[90px] rounded bg-primary`}
           ></span>
-          <p className="mb-10 text-base leading-relaxed dark:text-dark-6">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&apos;s standard dummy
-            text ever since
+          <p className="mb-10 text-2xl leading-relaxed font-absolut-pro dark:text-dark-6">
+            The message has been received and I&apos;ll answer as soon as
+            possible!
           </p>
-          <div className="-mx-3 flex flex-wrap">
-            <div className="w-1/2 px-3">
-              <button
-                onClick={() => setModalOpen(false)}
-                className="block w-full rounded-md border border-stroke p-3 text-center text-base font-medium text-dark transition hover:border-red-600 hover:bg-red-600 hover:text-white dark:text-white"
-              >
-                Cancel
-              </button>
-            </div>
-            <div className="w-1/2 px-3">
-              <button className="block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-medium text-white transition hover:bg-blue-dark">
-                <a href={`/#`}> View Details </a>
-              </button>
-            </div>
+          <div className="w-full flex items-center justify-center my-3">
+            <button
+              onClick={() => setModalOpen(false)}
+              className="contact-input align-middle text-lg lg:text-2xl select-none tracking-widest font-cold-warm text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none py-3 px-6 rounded-lg bg-zinc-800 text-white shadow-md shadow-zinc-900/10 hover:shadow-lg  hover:bg-zinc-900 hover:shadow-zinc-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            >
+              See you soon!
+            </button>
           </div>
         </div>
       </div>
