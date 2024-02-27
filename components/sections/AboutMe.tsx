@@ -1,20 +1,19 @@
 import ChromeIcon from "@/components/icons/ChromeIcon";
 import NutFillIcon from "@/components/icons/NutFillIcon";
 import gsap from "gsap";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 const AboutMe = ({ loading = false }: { loading?: boolean }) => {
   const perks = [
-    "High Standards",
-    "JavaScript and English",
-    "Front-End Technologies",
-    "Responsive Design",
-    "Reusable Components",
-    "Secure Coding",
-    "API Consuming",
-    "State Management",
-    "Effective Communication",
-    "Rapidly adapts to new technologies",
+    "Expertise in React & Next.js",
+    "Proficient in JavaScript & TypeScript",
+    "Seasoned Full-Stack Developer",
+    "Skilled in UX/UI Design",
+    "Specialist in Responsive Design",
+    "Focused on Security Best Practices",
+    "Experienced in API Integration",
+    "Strong Communication Skills",
   ];
   const slogans = [
     "GET MORE POWER",
@@ -127,14 +126,17 @@ const AboutMe = ({ loading = false }: { loading?: boolean }) => {
           <span className="about-title w-full flex text-white text-5xl tracking-wide sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl text-center justify-center md:justify-start md:text-start md:whitespace-nowrap">
             WEB ARTIST SINCE 2020
           </span>
-          <span className="about-subtitle text-3xl font-light md:text-3xl lg:text-4xl xl:text-5xl text-zinc-400 text-center md:text-start md:whitespace-nowrap">
+          <span className="flex items-center about-subtitle text-3xl font-light md:text-3xl lg:text-4xl xl:text-5xl text-zinc-400 text-center md:text-start md:whitespace-nowrap">
             Professional interface developer
           </span>
         </h1>
 
         <span className="mastery flex flex-col">
-          <h2 className="perk flex select-none text-4xl mt-16 font-cold-warm text-white">
+          <h2 className="perk gap-6 flex select-none text-4xl mt-16 font-cold-warm text-white">
             Mastery
+            <Link href={"/curriculum"} className="ml-auto btn-primary text-sm">
+              Curriculum
+            </Link>
           </h2>
           <div className="h-px md:block bg-gradient-to-r w-1/2 from-zinc-500/50 via-zinc-300/10 to-zinc-300/0" />
 
