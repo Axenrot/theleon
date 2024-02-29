@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Curriculum() {
   return (
-    <main className="flex font-cold-warm f h-full min-h-screen flex-col items-center bg-white bg-gradient-to-t from-black/90 to-black/80 text-3xl text-neutral-700 justify-between">
+    <main className="flex font-cold-warm f h-full min-h-screen flex-col items-center bg-white bg-gradient-to-t from-black/90 to-black/80 text-lg lg:text-3xl text-neutral-700 justify-between">
       <span className="bg-white gradient-to-t from-zinc-800/30 to-zinc-800 w-full h-16 flex justify-center items-center">
         <span className="container select-none px-3 flex w-full justify-between">
           <h1 className="">Leon&apos;s Journey</h1>
@@ -31,7 +31,7 @@ export default function Curriculum() {
           </p>
           <Link
             className="btn-primary"
-            href="https://drive.google.com/file/d/1jXxecOvzQD69IBMbonTFq55-9OeUePx3/view?usp=sharing"
+            href="https://drive.google.com/file/d/1CZlxh8tNR0ASAsarKrItiQMoxjGBDbET/view?usp=sharing"
           >
             PDF Link!
           </Link>
