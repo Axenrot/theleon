@@ -19,7 +19,7 @@ export default function Curriculum() {
       </span>
       <div className="container flex-1 mb-6 md:gap-12 my-6 px-3 flex flex-col md:flex-row mx-auto items-center justify-center">
         <object
-          data="/yurileon-cv.pdf#view=FitH"
+          data="/YuriLeonEN.pdf#view=FitH"
           type="application/pdf"
           width="100%"
           height="100%"
@@ -31,7 +31,7 @@ export default function Curriculum() {
           </p>
           <Link
             className="btn-primary"
-            href="https://drive.google.com/file/d/1jXxecOvzQD69IBMbonTFq55-9OeUePx3/view?usp=sharing"
+            href="https://drive.google.com/file/d/1CZlxh8tNR0ASAsarKrItiQMoxjGBDbET/view?usp=sharing"
           >
             PDF Link!
           </Link>
