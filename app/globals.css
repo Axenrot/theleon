@@ -128,6 +128,6 @@
 
 @layer components {
   .btn-primary {
-    @apply px-4 py-2 flex items-center tracking-wider gap-2 transition-all duration-200 border-2 rounded-md cursor-pointer bg-black/80 hover:bg-white hover:text-black hover:border-black disabled:pointer-events-none disabled:opacity-80 disabled:bg-zinc-900;
+    @apply px-4 py-2 text-white flex items-center tracking-wider gap-2 transition-all duration-200 border-2 rounded-md cursor-pointer bg-black/80 hover:bg-white hover:text-black hover:border-black disabled:pointer-events-none disabled:opacity-80 disabled:bg-zinc-900;
   }
 }
