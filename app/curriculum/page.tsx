@@ -19,7 +19,7 @@ export default function Curriculum() {
       </span>
       <div className="container flex-1 mb-6 md:gap-12 my-6 px-3 flex flex-col md:flex-row mx-auto items-center justify-center">
         <object
-          data="/YuriLeonEN.pdf#view=FitH"
+          data="/yurileon.pdf#view=FitH"
           type="application/pdf"
           width="100%"
           height="100%"
